@@ -1,50 +1,55 @@
-# OpenClaw Skills by @liutao
+# OpenClaw Skills by @liutao0401-afk
 
-三个 OpenClaw 技能包，参考 Claude Code 泄漏源码设计。
+参考 Claude Code 泄漏源码，为 OpenClaw 设计的增强技能包。
 
 ## 技能包
 
-### 🌙 Dream Mode — 记忆整合引擎
-自动化记忆整理，让 Agent 真正"认识"用户。
+### 🌙 Dream Mode
+记忆整合引擎 — 当 Agent 闲置时自动整理分散的记忆碎片。
+**标签:** memory, automation, idle, consolidation
 
-**标签：** memory, automation, idle, consolidation
+### 🤖 KAIROS
+自主运行守护进程 — 集 Cron 调度 + GitHub Webhook 于一体。
+**标签:** automation, cron, webhook, github, daemon
 
-### 🤖 KAIROS — 自主运行守护进程
-集 Cron 调度 + GitHub Webhook 于一体。
+### 🐾 Buddy System
+ASCII 宠物陪伴 — 12 种宠物、5 级稀有度、心情互动。
+**标签:** fun, companion, pets, ascii, mood
 
-**标签：** automation, cron, webhook, github, daemon, autonomous
+### 🛠 Toolset Expansion
+扩展工具集 — Grep/Glob/TodoWrite-TodoRead/Rank。
+**标签:** tools, grep, glob, todo, rank, search
 
-### 🐾 Buddy System — ASCII 宠物陪伴
-给 OpenClaw 一只灵魂宠物，陪你写代码。
+### 😊 Mood Detection
+心情检测 — Regex 匹配用户情绪，自动调整响应策略。
+**标签:** mood, emotion, ux, sentiment
 
-**标签：** fun, companion, pets, ascii, mood, personality
+### 🚩 Feature Flags
+功能开关系统 — 控制功能灰度发布，支持多状态管理。
+**标签:** feature-flags, system, configuration
 
 ---
 
 ## 发布方式
 
-使用 [ClawHub CLI](https://clawhub.ai) 发布：
+使用 [ClawHub CLI](https://clawhub.ai) 安装：
 
 ```bash
-# 1. 安装 clawhub（需要 Node.js）
-npm install -g clawhub
-
-# 2. 登录
-clawhub login
-
-# 3. 发布 Dream Mode
-cd dream-mode
-clawhub skill publish . --slug dream-mode --name "Dream Mode" --tags memory,automation --changelog "v1.0.0 initial release"
-
-# 4. 发布 KAIROS
-cd ../kairos
-clawhub skill publish . --slug kairos --name "KAIROS" --tags automation,cron,webhook --changelog "v1.0.0 initial release"
-
-# 5. 发布 Buddy System
-cd ../buddy-system
-clawhub skill publish . --slug buddy-system --name "Buddy System" --tags fun,companion --changelog "v1.0.0 initial release"
+# 安装单个技能
+openclaw skills add https://github.com/liutao0401-afk/openclaw-skills/tree/main/dream-mode
+openclaw skills add https://github.com/liutao0401-afk/openclaw-skills/tree/main/kairos
+openclaw skills add https://github.com/liutao0401-afk/openclaw-skills/tree/main/buddy-system
+openclaw skills add https://github.com/liutao0401-afk/openclaw-skills/tree/main/toolset-expansion
+openclaw skills add https://github.com/liutao0401-afk/openclaw-skills/tree/main/mood-detection
+openclaw skills add https://github.com/liutao0401-afk/openclaw-skills/tree/main/feature-flags
 ```
+
+## 设计参考
+
+- Claude Code v2.1.50 System Prompt
+- Claude Code 泄漏源码分析（512,000+ 行 TypeScript）
+- Dream Mode / KAIROS / Buddy System / ULTRAPLAN / Mood Detection
 
 ## 作者
 
-GitHub: [@liutao](https://github.com/liutao0401)
+GitHub: [@liutao0401-afk](https://github.com/liutao0401-afk)

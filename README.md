@@ -1,55 +1,77 @@
-# OpenClaw Skills by @liutao0401-afk
+# OpenClaw Skills — 技能库
 
-参考 Claude Code 泄漏源码，为 OpenClaw 设计的增强技能包。
+> 基于 Hermes Agent 理念构建的自主学习闭环系统
+> 自动从任务中学习，持续积累可复用技能
 
-## 技能包
+## 核心机制
 
-### 🌙 Dream Mode
-记忆整合引擎 — 当 Agent 闲置时自动整理分散的记忆碎片。
-**标签:** memory, automation, idle, consolidation
-
-### 🤖 KAIROS
-自主运行守护进程 — 集 Cron 调度 + GitHub Webhook 于一体。
-**标签:** automation, cron, webhook, github, daemon
-
-### 🐾 Buddy System
-ASCII 宠物陪伴 — 12 种宠物、5 级稀有度、心情互动。
-**标签:** fun, companion, pets, ascii, mood
-
-### 🛠 Toolset Expansion
-扩展工具集 — Grep/Glob/TodoWrite-TodoRead/Rank。
-**标签:** tools, grep, glob, todo, rank, search
-
-### 😊 Mood Detection
-心情检测 — Regex 匹配用户情绪，自动调整响应策略。
-**标签:** mood, emotion, ux, sentiment
-
-### 🚩 Feature Flags
-功能开关系统 — 控制功能灰度发布，支持多状态管理。
-**标签:** feature-flags, system, configuration
-
----
-
-## 发布方式
-
-使用 [ClawHub CLI](https://clawhub.ai) 安装：
-
-```bash
-# 安装单个技能
-openclaw skills add https://github.com/liutao0401-afk/openclaw-skills/tree/main/dream-mode
-openclaw skills add https://github.com/liutao0401-afk/openclaw-skills/tree/main/kairos
-openclaw skills add https://github.com/liutao0401-afk/openclaw-skills/tree/main/buddy-system
-openclaw skills add https://github.com/liutao0401-afk/openclaw-skills/tree/main/toolset-expansion
-openclaw skills add https://github.com/liutao0401-afk/openclaw-skills/tree/main/mood-detection
-openclaw skills add https://github.com/liutao0401-afk/openclaw-skills/tree/main/feature-flags
+```
+任务完成 → 反思 → 判断是否技能化 → 写成 SKILL.md → 下次自动调用 → 持续改进
 ```
 
-## 设计参考
+## 技能目录
 
-- Claude Code v2.1.50 System Prompt
-- Claude Code 泄漏源码分析（512,000+ 行 TypeScript）
-- Dream Mode / KAIROS / Buddy System / ULTRAPLAN / Mood Detection
+| 技能 | 描述 | 状态 |
+|------|------|------|
+| `self-reflection.md` | 自主学习闭环（核心机制） | ✅ |
+| `dcs-opc-collector.md` | 通用 DCS OPC UA 数据采集 | ✅ |
+| `github-deploy.md` | GitHub 仓库创建 + 推送 | ✅ |
+| `windows-cleanup.md` | Windows 自启动项彻底清理 | ✅ |
+| `SKILL.md` | 技能创建模板 | ✅ |
 
-## 作者
+## 技能格式
 
-GitHub: [@liutao0401-afk](https://github.com/liutao0401-afk)
+遵循 Hermes SKILL.md 标准格式：
+```yaml
+---
+name: skill-name
+description: 简短描述
+version: 1.0.0
+platforms: [windows, linux, darwin]
+author: auto-learned
+created: 2026-MM-DD
+tags: [tag1, tag2]
+---
+
+# 技能名称
+
+## 何时使用
+
+## 标准流程
+
+## 注意事项
+
+## 验证方法
+```
+
+## 触发条件
+
+以下情况自动触发学习流程：
+1. 复杂任务（超过5步骤）完成
+2. 用户说"记住这个"
+3. 同类任务第三次出现
+4. 调研新框架/新技术后
+
+## 推送机制
+
+学到新技能后，自动推送到：
+- `workspace-taizi` — 钉钉 agent
+- 其他配置好的 agent workspace
+
+## 与 Hermes 的差异
+
+| 功能 | Hermes | OpenClaw |
+|------|--------|----------|
+| 技能格式 | SKILL.md + YAML meta | 完全兼容 |
+| 学习触发 | 自动 | 当前手动，未来自动 |
+| 技能数量 | 40+ | 4（起步） |
+| 跨Agent推送 | 支持 | 已实现 |
+| 容量限制 | MEMORY 2200c | 当前无限制 |
+
+## 扩展方向
+
+- [ ] 增加更多技能（目标：20+）
+- [ ] 实现自动反思触发（不需要用户说）
+- [ ] 增加技能使用追踪
+- [ ] 实现容量管理
+- [ ] 对接 agentskills.io 标准

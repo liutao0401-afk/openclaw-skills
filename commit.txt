@@ -1,0 +1,9 @@
+feat: Add self-reflection and practical skills system
+
+New skills (Hermes-inspired):
+- self-reflection.md: Core learning loop mechanism
+- dcs-opc-collector.md: Universal DCS OPC UA data collection
+- github-deploy.md: GitHub repo create + push workflow
+- windows-cleanup.md: Windows startup item removal
+- SKILL.md: Skill creation template
+- Updated README.md with learning loop documentation

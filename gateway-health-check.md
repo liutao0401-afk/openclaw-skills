@@ -11,6 +11,7 @@ cron:
   tz: "Asia/Bangkok"
   description: "每15分钟检查 Gateway 连通性，挂了则自动重启"
   enabled: true
+  _note: "OpenClaw cron 需要 operator.admin scope，当前用 Windows Task Scheduler 实现"
 ---
 
 # Gateway Health Check — 自动健康检查与自愈

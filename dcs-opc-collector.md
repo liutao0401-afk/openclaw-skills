@@ -72,3 +72,9 @@ curl -G "http://localhost:8086/query?db=jx300xp" --data-urlencode "q=SELECT * FR
 ## 验证方法
 
 Grafana 看板有数据，趋势图正常显示，无告警红色
+
+## 使用反馈（自动记录到 skills/usage-log.json）
+```json
+"effectiveness": "good",  // good / mixed / poor
+"lastResult": "",
+"notes": []

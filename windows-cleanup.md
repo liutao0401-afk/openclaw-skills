@@ -65,3 +65,9 @@ Remove-Item "C:\Users\hh\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\S
 ## 验证方法
 
 重启后软件不再自动启动，gateway config 不再被重置
+
+## 使用反馈
+```json
+"effectiveness": "",  // good / mixed / poor
+"lastResult": "",
+"notes": []

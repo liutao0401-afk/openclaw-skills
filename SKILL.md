@@ -30,3 +30,11 @@ tags: [template]
 ## 验证方法
 
 如何确认执行成功了
+
+## 使用反馈（每次调用后更新）
+```json
+"effectiveness": "good",  // good / mixed / poor
+"lastResult": "本次执行结果",
+"notes": ["备注1", "备注2"]
+```
+每次技能使用后，在上方填写实际效果。effectiveness 变化时（如 mixed → good），在 notes 中说明原因。

@@ -69,3 +69,9 @@ curl https://api.github.com/repos/liutao0401-afk/REPO_NAME/contents
 ## 验证方法
 
 仓库页面能正常访问，文件列表完整
+
+## 使用反馈
+```json
+"effectiveness": "",  // good / mixed / poor
+"lastResult": "",
+"notes": []

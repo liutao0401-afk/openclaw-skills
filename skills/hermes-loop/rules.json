@@ -1,0 +1,32 @@
+{
+  "version": "1.0.0",
+  "rules": [
+    {
+      "id": "git_pending",
+      "priority": "high",
+      "condition": "has_uncommitted_changes > 0",
+      "action": "commit_git_changes",
+      "reason": "避免工作丢失"
+    },
+    {
+      "id": "memory_full",
+      "priority": "medium",
+      "condition": "memory_chars > 2500",
+      "action": "compress_memory",
+      "reason": "防止超出硬限制"
+    },
+    {
+      "id": "daily_backup",
+      "priority": "low",
+      "condition": "hours_since_last_backup > 24",
+      "action": "create_backup",
+      "reason": "数据安全"
+    }
+  ],
+  "thresholds": {
+    "memory_soft": 2500,
+    "memory_hard": 3000,
+    "user_soft": 1200,
+    "user_hard": 1500
+  }
+}
